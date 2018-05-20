@@ -1,13 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <el-row>
+      <el-col :span="24">
+        <xHeader></xHeader>
+      </el-col>
+    </el-row>
+    <el-row id="ng_main_container">
+      <el-col :span="3">
+        <xSideBar></xSideBar>
+      </el-col>
+      <el-col :span="21">
+        <h2>Main</h2>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
+import xHeader from '@/components/Header'
+import xSideBar from '@/components/SideBar'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {xHeader, xSideBar}
 }
 </script>
 
@@ -18,6 +32,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width:100%;
+  height: 100%;
+}
+#ng_main_container{
+  height: calc(100% - var(--header-height));
 }
 </style>
