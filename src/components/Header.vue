@@ -8,18 +8,16 @@
       <ul class="ng-header-menus">
         <li v-for="(item,index) in menuArr" :key="index" @click="onMenu1Click(index)" :data-index="index">
           <!-- 一级菜单 -->
-          <a v-if="item.children" href="javascript:void(0);">{{item.title}}</a>
-          <router-link v-else :to="item.link" :title="item.title">{{item.title}}</router-link>
-          <i v-if="item.children" :class="'ng-header-menus-arrow el-icon-arrow-down'+(item.isShowChildren?' ng-header-menus-arrow-open':'')"></i>
-          <div v-if="item.children" class="ng-header-menus-children-container" :data-index="index">
-            <p class="ng-menus-arrow-up"></p>
-            <ul v-if="item.children" class="ng-header-menus-children" :data-index="index" tabindex="0" hidefocus="true" @blur="onMenu2Blur(index)">
-              <li v-for="(item2,index2) in item.children" :key="index2">
-                <!-- 二级菜单 -->
+          <el-dropdown v-if="item.children" trigger="click">
+            <span class="el-dropdown-link">{{item.title}}<i class="el-icon-arrow-down el-icon--right"></i></span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item v-for="(item2,index2) in item.children" :key="index2">
                 <router-link :to="item2.link ? item2.link : '/404'" :title="item2.title">{{item2.title}}</router-link>
-              </li>
-            </ul>
-          </div>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+            <!-- 二级菜单 -->
+          </el-dropdown>
+          <router-link v-else :to="item.link" :title="item.title">{{item.title}}</router-link>
         </li>
       </ul>
     </div>
@@ -57,7 +55,6 @@ export default {
   },
   methods: {
     onMenu1Click (index) {
-      console.log('onMenu1Click')
       if (parseInt(index) === parseInt(this.getCurrentOpenMenu2Index())) {
         return
       }
@@ -65,7 +62,7 @@ export default {
       this.openMenu2Container(index)
     },
     onMenu2Blur (index) {
-      this.clearAllMenu2Contaienr()
+      //this.clearAllMenu2Contaienr()
     },
     getMenu2ContainerByIndex (index) {
       return $('.ng-header-menus-children-container[data-index=\'' + index + '\']')
@@ -196,6 +193,7 @@ export default {
   transition: all .2s;
   height: 0;
   overflow: hidden;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
 }
 #ng_header ul.ng-header-menus > li ul.ng-header-menus-children{
   list-style: none;
@@ -203,15 +201,23 @@ export default {
   box-sizing: border-box;
   border-radius: .1rem;
   padding: .3rem 0;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
 }
 .ng-menus-arrow-up{
+  margin: 0 auto;
+  border-top-width: 0;
+  border-bottom-color: green;
+}
+.ng-menus-arrow-up::after{
+  content: " ";
   width:0;
   height: 0;
-  margin: 0 auto;
-  border-left: .3rem solid transparent;
-  border-right: .3rem solid transparent;
-  border-bottom: .3rem solid #009cf7;
+  position: absolute;
+  display: block;
+  border-color:transparent;
+  border-style: solid;
+  border-width: 6px;
+  border-top-width: 0;
+  border-bottom-color: red;
 }
 #ng_header ul.ng-header-menus > li ul.ng-header-menus-children > li{
   padding: 0 .6rem;
