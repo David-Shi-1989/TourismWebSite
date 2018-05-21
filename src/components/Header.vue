@@ -7,13 +7,16 @@
     <div class="ng-header-menuContainer">
       <ul class="ng-header-menus">
         <li v-for="(item,index) in menuArr" :key="index" @click="onMenu1Click(index)" :data-index="index">
-          <a href="javascript:void(0);">{{item.title}}</a>
+          <!-- 一级菜单 -->
+          <a v-if="item.children" href="javascript:void(0);">{{item.title}}</a>
+          <router-link v-else :to="item.link" :title="item.title">{{item.title}}</router-link>
           <i v-if="item.children" :class="'ng-header-menus-arrow el-icon-arrow-down'+(item.isShowChildren?' ng-header-menus-arrow-open':'')"></i>
           <div v-if="item.children" class="ng-header-menus-children-container" :data-index="index">
             <p class="ng-menus-arrow-up"></p>
             <ul v-if="item.children" class="ng-header-menus-children" :data-index="index" tabindex="0" hidefocus="true" @blur="onMenu2Blur(index)">
               <li v-for="(item2,index2) in item.children" :key="index2">
-                <a href="javascript:void(0);">{{item2.title}}</a>
+                <!-- 二级菜单 -->
+                <router-link :to="item2.link ? item2.link : '/404'" :title="item2.title">{{item2.title}}</router-link>
               </li>
             </ul>
           </div>
@@ -29,14 +32,14 @@ export default {
   data () {
     return {
       menuArr: [
-        {title: '主页', icon: 'el-icon-upload'},
+        {title: '主页', icon: 'el-icon-upload', link: '/'},
         {
           title: '旅游',
           icon: 'el-icon-upload',
           isShowChildren: false,
           children: [
-            {title: '旅游11111', icon: 'el-icon-upload'},
-            {title: '旅游2', icon: 'el-icon-upload'}
+            {title: '旅游11111', icon: 'el-icon-upload', link: '/tourism/1'},
+            {title: '旅游2', icon: 'el-icon-upload', link: '/tourism/2'}
           ]
         },
         {
@@ -48,7 +51,7 @@ export default {
             {title: '游记2', icon: 'el-icon-upload'}
           ]
         },
-        {title: '小视频', icon: 'el-icon-upload'}
+        {title: '小视频', icon: 'el-icon-upload', link: '/video'}
       ]
     }
   },

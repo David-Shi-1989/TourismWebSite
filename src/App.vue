@@ -10,7 +10,7 @@
         <xSideBar></xSideBar>
       </el-col>
       <el-col :span="21">
-        <h2>Main</h2>
+        <router-view></router-view>
       </el-col>
     </el-row>
   </div>
