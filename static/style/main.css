@@ -16,13 +16,20 @@ body {
 
 /***Header Menus***/
 /*一级菜单样式*/
-#ng_header ul.ng-header-menus > li a,
-#ng_header ul.ng-header-menus > li span.el-dropdown-link,
-#ng_header li.el-dropdown-menu__item{
+#ng_header .ng-header-menu-1,
+#ng_header .ng-header-menu-2{
   text-decoration: none;
   color: #f0f9fe;
   font-size: .7rem;
+  outline: 0;
 }
+#ng_header .ng-header-menu-1.active{
+  background: #28a745;
+  padding: .2rem .4rem;
+  border-radius: .2rem;
+  color: #FFF;
+}
+
 
 @media only screen and (max-width: 1921px) {
   html {

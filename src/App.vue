@@ -6,12 +6,7 @@
       </el-col>
     </el-row>
     <el-row id="ng_main_container">
-      <el-col :span="3">
-        <xSideBar></xSideBar>
-      </el-col>
-      <el-col :span="21">
-        <router-view></router-view>
-      </el-col>
+      <router-view></router-view>
     </el-row>
   </div>
 </template>
