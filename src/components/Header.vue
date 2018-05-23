@@ -1,18 +1,18 @@
 <template>
   <div id="ng_header">
     <div class="ng-header-logo">
-      <i class="el-icon-picture" style="font-size:2rem;color:#FFF;" title="logo"></i>
+      <i class="el-icon-picture" style="font-size:1.3rem;color:#FFF;" title="logo"></i>
       <!-- <img src="static/image/logo.png"> -->
     </div>
     <div class="ng-header-menuContainer">
       <ul class="ng-header-menus">
-        <li v-for="(item,index) in menuArr" :key="index" @click="onMenu1Click(index)" :data-index="index">
+        <li v-for="(item,index) in menuArr" :key="index" :data-index="index">
           <!-- 一级菜单 -->
           <el-dropdown v-if="item.children" trigger="click">
             <span class="el-dropdown-link">{{item.title}}<i class="el-icon-arrow-down el-icon--right"></i></span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item v-for="(item2,index2) in item.children" :key="index2">
-                <router-link :to="item2.link ? item2.link : '/404'" :title="item2.title">{{item2.title}}</router-link>
+                <router-link :to="item2.link ? item2.link : '/404'" :title="item2.title" class="ng-header-menu-2" active-class="active">{{item2.title}}</router-link>
               </el-dropdown-item>
             </el-dropdown-menu>
             <!-- 二级菜单 -->
@@ -50,74 +50,11 @@ export default {
           ]
         },
         {title: '小视频', icon: 'el-icon-upload', link: '/video'}
-      ]
+      ],
+      active: false
     }
   },
   methods: {
-    onMenu1Click (index) {
-      if (parseInt(index) === parseInt(this.getCurrentOpenMenu2Index())) {
-        return
-      }
-      this.clearAllMenu2Contaienr()
-      this.openMenu2Container(index)
-    },
-    onMenu2Blur (index) {
-      //this.clearAllMenu2Contaienr()
-    },
-    getMenu2ContainerByIndex (index) {
-      return $('.ng-header-menus-children-container[data-index=\'' + index + '\']')
-    },
-    getMenu2ContainerHeight (index) {
-      let menu2ItemSize = this.menuArr[index].children.length
-      return menu2ItemSize * 1.6 + 0.6 + 0.3
-    },
-    getCurrentOpenMenu2Index () {
-      for (let i = 0; i < this.menuArr.length; i++) {
-        if (this.menuArr[i].isShowChildren) {
-          return i
-        }
-      }
-      return -1
-    },
-    clearAllMenu2Contaienr () {
-      for (let i = 0; i < this.menuArr.length; i++) {
-        if (this.menuArr[i].isShowChildren) {
-          this.menuArr[i].isShowChildren = false
-          this.closeMenu2Container(i)
-        }
-      }
-    },
-    openMenu2Container (index) {
-      console.log('openMenu2Container' + index)
-      let el
-      if (!isNaN(index)) {
-        el = this.getMenu2ContainerByIndex(index)
-      } else {
-        el = index
-      }
-      if (el.length) {
-        this.menuArr[index].isShowChildren = true
-        el.animate({
-          height: this.getMenu2ContainerHeight(index) + 'rem'
-        }, 50, function () {
-          this.lastElementChild.focus()
-        })
-      }
-    },
-    closeMenu2Container (index) {
-      console.log('closeMenu2Container' + index)
-      let el
-      if (!isNaN(index)) {
-        el = this.getMenu2ContainerByIndex(index)
-      } else {
-        el = index
-      }
-      if (el.length) {
-        el.animate({
-          height: 0
-        }, 50)
-      }
-    }
   }
 }
 </script>
@@ -128,14 +65,14 @@ export default {
   height: var(--header-height);
   line-height: var(--header-height);
   vertical-align: middle;
-  background-color: #009cf7;
+  background-color: #53cc64ef;
 }
 #ng_header .ng-header-logo {
   box-sizing: border-box;
   width: 4rem;
   height: 100%;
-  padding-top: .5rem;
-  float: left;;
+  padding-top: calc((var(--header-height) - 1.3rem) / 2);
+  float: left;
 }
 #ng_header .ng-header-logo img{
   width:100%;
@@ -174,62 +111,10 @@ export default {
 #ng_header ul.ng-header-menus > li:last-child{
   margin-right: 0;
 }
-#ng_header ul.ng-header-menus > li a{
-  text-decoration: none;
-  color: #f0f9fe;
-}
 .ng-header-menus-arrow{
   transition: all .25s ease-in-out;
 }
 .ng-header-menus-arrow.ng-header-menus-arrow-open{
   transform: rotate(90deg);
-}
-/**二级菜单**/
-#ng_header ul.ng-header-menus > li div.ng-header-menus-children-container{
-  position: absolute;
-  z-index: 9998;
-  outline: none;
-  margin-top: .6rem;
-  transition: all .2s;
-  height: 0;
-  overflow: hidden;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.3);
-}
-#ng_header ul.ng-header-menus > li ul.ng-header-menus-children{
-  list-style: none;
-  background-color: #009cf7;
-  box-sizing: border-box;
-  border-radius: .1rem;
-  padding: .3rem 0;
-}
-.ng-menus-arrow-up{
-  margin: 0 auto;
-  border-top-width: 0;
-  border-bottom-color: green;
-}
-.ng-menus-arrow-up::after{
-  content: " ";
-  width:0;
-  height: 0;
-  position: absolute;
-  display: block;
-  border-color:transparent;
-  border-style: solid;
-  border-width: 6px;
-  border-top-width: 0;
-  border-bottom-color: red;
-}
-#ng_header ul.ng-header-menus > li ul.ng-header-menus-children > li{
-  padding: 0 .6rem;
-  word-break: keep-all;
-  height: 1.6rem;
-  line-height: 1.6rem;
-}
-#ng_header ul.ng-header-menus > li ul.ng-header-menus-children > li:hover{
-  background: #00def7;
-  color:#333;
-}
-#ng_header ul.ng-header-menus > li ul.ng-header-menus-children > li a{
-  color: #f0f9fe;
 }
 </style>
