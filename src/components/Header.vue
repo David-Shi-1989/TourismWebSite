@@ -9,15 +9,18 @@
         <ul class="ng-header-menus">
           <li v-for="(item,index) in menuArr" :key="index" :data-index="index">
             <!-- 一级菜单 -->
-            <el-dropdown v-if="item.children" trigger="click">
-              <span class="el-dropdown-link ng-header-menu-1">{{item.title}}<i class="el-icon-arrow-down el-icon--right"></i></span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item v-for="(item2,index2) in item.children" :key="index2">
-                  <router-link :to="item2.link ? item2.link : '/404'" :title="item2.title" class="ng-header-menu-2" active-class="active">{{item2.title}}</router-link>
-                </el-dropdown-item>
-              </el-dropdown-menu>
-              <!-- 二级菜单 -->
-            </el-dropdown>
+            <Dropdown v-if="item.children" trigger="click" placement="bottom">
+              <a href="javascript:void(0)" :title="item.title">
+                <span>{{item.title}}</span>
+                <Icon type="arrow-down-b"></Icon>
+              </a>
+              <DropdownMenu slot="list">
+                <DropdownItem v-for="(item2,index2) in item.children" :key="index2">
+                  {{item2.title}}
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+            <!-- 二级菜单 -->
             <router-link v-else :to="item.link" :title="item.title" :class="'ng-header-menu-1'+(item.active?' active':'')">{{item.title}}</router-link>
           </li>
         </ul>
@@ -27,20 +30,7 @@
       </div>
     </div>
     <div id="ng_imgbg">
-      <el-carousel trigger="click" height="1080px" interval="5000">
-        <el-carousel-item>
-          <img src="/static/image/veer-141031161.jpg">
-        </el-carousel-item>
-        <el-carousel-item>
-          <img src="/static/image/veer-145548331.jpg">
-        </el-carousel-item>
-        <el-carousel-item>
-          <img src="/static/image/veer-145848499.jpg">
-        </el-carousel-item>
-        <el-carousel-item>
-          <img src="/static/image/veer-169394215.jpg">
-        </el-carousel-item>
-      </el-carousel>
+      
     </div>
   </div>
 </template>
@@ -85,13 +75,11 @@ export default {
 <style scoped>
 #ng_header{
   width: 100%;
-  position: absolute;
   top:0;
   height: var(--header-height);
   line-height: var(--header-height);
   vertical-align: middle;
-  background: rgba(0,0,0,.25);
-  box-shadow: #444 1px 1px 1px;
+  background: rgba(0,0,0,.3);
 }
 #ng_header .ng-header-logo {
   box-sizing: border-box;

@@ -1,13 +1,9 @@
 <template>
   <div id="app">
-    <el-row>
-      <el-col :span="24">
-        <xHeader></xHeader>
-      </el-col>
-    </el-row>
-    <el-row id="ng_main_container">
+    <xHeader></xHeader>
+    <div id="ng_main_container">
       <router-view></router-view>
-    </el-row>
+    </div>
   </div>
 </template>
 
