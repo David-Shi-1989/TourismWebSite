@@ -16,7 +16,7 @@
               </a>
               <DropdownMenu slot="list">
                 <DropdownItem v-for="(item2,index2) in item.children" :key="index2">
-                  {{item2.title}}
+                  <a href="javascript:void(0)" :title="item2.title">{{item2.title}}</a>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
@@ -30,7 +30,22 @@
       </div>
     </div>
     <div id="ng_imgbg">
-      
+      <div class="img-wrap">
+        <img src="/static/image/veer-145548331.jpg">
+        <img src="/static/image/veer-141031161.jpg">
+        <img src="/static/image/veer-145848499.jpg">
+        <img src="/static/image/veer-169394215.jpg">
+        <div class="clr"></div>
+      </div>
+      <div class="img-btn">
+        <Icon type="chevron-left" class="btn-left" @click="imgWrapMove(-1)"></Icon>
+        <Icon type="chevron-right" class="btn-right" @click="imgWrapMove(1)"></Icon>
+      </div>
+      <div class="img-desc">
+        <h2>宁国农家乐</h2>
+        <h3>小标题</h3>
+        <p>安徽皖南宣城市宁国</p>
+      </div>
     </div>
   </div>
 </template>
@@ -63,11 +78,32 @@ export default {
         },
         {title: '小视频', icon: 'el-icon-upload', link: '/video'}
       ],
-      active: false
+      active: false,
+      carousel: {
+        activeIndex: 0
+      }
     }
   },
   components: {UserLoginInfo},
   methods: {
+    getImgCount () {
+      return $('#ng_imgbg > div.img-wrap').find('img').length
+    },
+    imgWrapMove (step) {
+      if (!isNaN(parseInt(step))) {
+        var me = this
+        let el = $('#ng_imgbg > div.img-wrap')
+        let val = (this.carousel.activeIndex + step) % this.getImgCount()
+        if (val < 0) {
+          val += this.getImgCount()
+        }
+        el.animate({
+          marginLeft: (-1 * val) + '00%'
+        }, 300, function () {
+          me.carousel.activeIndex = val
+        })
+      }
+    }
   }
 }
 </script>
@@ -75,11 +111,13 @@ export default {
 <style scoped>
 #ng_header{
   width: 100%;
+  position: absolute;
   top:0;
   height: var(--header-height);
   line-height: var(--header-height);
   vertical-align: middle;
   background: rgba(0,0,0,.3);
+  z-index: 10;
 }
 #ng_header .ng-header-logo {
   box-sizing: border-box;
@@ -134,10 +172,47 @@ export default {
 
 #ng_imgbg{
   width:100%;
-  /* height: 25rem;
+  position: relative;
+}
+#ng_imgbg > div.img-wrap{
+  position: relative;
+  width: 400%;
+}
+#ng_imgbg img{
+  width:25%;
+  top:0;
+  float: left;
+}
+#ng_imgbg > div.img-btn{
+  position: absolute;
+  top:50%;
+  padding:0 20px;
+  width: 100%;
+}
+#ng_imgbg > div.img-btn i{
+  font-size: 25px;
+  opacity: .6;
+  transition: opacity .5s;
+  cursor: pointer;
+  background: rgba(0,0,0,.3);
+  padding: 5px;
+  color:rgba(0,0,0,.5);
+}
+#ng_imgbg > div.img-btn i:hover{
+  opacity: 1;
+}
+#ng_imgbg > div.img-btn i.btn-left{
+  float: left;
+}
+#ng_imgbg > div.img-btn i.btn-right{
+  float: right;
+}
+#ng_imgbg > div.img-desc{
   background-color: rgba(0,0,0,.3);
-  background-image: url("/static/image/veer-169394215.jpg");
-  background-size: 100% auto;
-  background-position: 0 -15rem; */
+  position: absolute;
+  width:30%;
+  height: calc(100% - var(--header-height));
+  top:var(--header-height);
+  color:#FBFBFB;
 }
 </style>

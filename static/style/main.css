@@ -13,23 +13,42 @@ html, body{
 body {
   --header-height: 2rem;
 }
-
+.clear::after{
+  content: '';
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.clr{
+  clear: both;
+}
 /***Header Menus***/
 /*一级菜单样式*/
-#ng_header .ng-header-menu-1,
-#ng_header .ng-header-menu-2{
+#ng_header a{
   text-decoration: none;
   color: #f0f9fe;
   font-size: .7rem;
   outline: 0;
+  padding-bottom: 2px;
+  opacity: .7;
+  transition: opacity .4s;
 }
 #ng_header .ng-header-menu-1.active{
-  background: #28a745;
-  padding: .2rem .4rem;
-  border-radius: .2rem;
-  color: #FFF;
+  border-bottom: 2px solid #FFF;
+  opacity: 1;
 }
-
+#ng_header div.ivu-select-dropdown{
+  background-color: rgba(0,0,0,.3);
+}
+.color-disabled{
+  color:#bbbec4;
+}
+.color-border{
+  color:#dddee1;
+}
+.color-divider{
+  color:#e9eaec;
+}
 
 @media only screen and (max-width: 1921px) {
   html {
