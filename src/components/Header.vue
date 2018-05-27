@@ -173,6 +173,7 @@ export default {
 #ng_imgbg{
   width:100%;
   position: relative;
+  box-shadow: 0px 1px 5px #666;
 }
 #ng_imgbg > div.img-wrap{
   position: relative;

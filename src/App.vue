@@ -25,6 +25,7 @@ export default {
   color: #2c3e50;
   width:100%;
   height: 100%;
+  padding-bottom: 20px;
 }
 #ng_main_container{
   height: calc(100% - var(--header-height));
