@@ -11,6 +11,7 @@ html, body{
   overflow: hidden;
 }
 body {
+  overflow-y: auto;
   --header-height: 2rem;
 }
 .clear{
