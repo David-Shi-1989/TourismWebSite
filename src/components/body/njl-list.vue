@@ -78,6 +78,42 @@
           </ul> 
         </div>
       </TabPane>
+      <TabPane label="垂钓" name="3">
+        <div class="ng-ul-list-wrap">
+          <ul class="ng-ul-list clear">
+            <li v-for="(item,index) in data3" :key="index">
+              <img :src="item.img">
+              <div class="ng-njl-list-info">
+                <div class="ng-njl-list-info-title">
+                  <h3>
+                    {{item.name}}
+                    <span class="ng-njl-list-info-title-location">
+                      <i class="fa fa-map-marker"></i>
+                      <span v-for="(locationItem,index) in item.location" :key="'location_' + index">
+                        {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
+                      </span>
+                    </span>
+                  </h3>
+                  <span :title="item.score + '分'">
+                    <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
+                    <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
+                    <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
+                    <span class="color-disabled">{{item.commentCount}}条评价</span>
+                  </span>
+                  <div class="clr"></div>
+                </div>
+                <p class="ng-njl-list-info-desc">{{item.desc}}</p>
+                <div class="ng-njl-list-info-tag">
+                  <span title="Wifi"><i class="fa fa-wifi enable"></i></span>
+                  <span title="住宿"><i class="fa fa-hotel enable"></i></span>
+                  <span title="停车"><i class="fa fa-car enable"></i></span>
+                  <span title="洗澡"><i class="fa fa-bathtub disable"></i></span>
+                </div>
+              </div>
+            </li>
+          </ul> 
+        </div>
+      </TabPane>
     </Tabs>
   </div>
   
@@ -167,6 +203,48 @@ export default {
         {
           name: '葡萄乐摘',
           img: '/static/image/njg_13.jpg',
+          score: 2.5,
+          desc: '农家灶台饭，体验最简单的生活。',
+          commentCount: 24,
+          location: ['安徽', '黄山', '歙县']
+        }
+      ],
+      data3: [
+        {
+          name: '老王家垂钓农家',
+          img: '/static/image/njg_14.jpg',
+          score: 4,
+          desc: '四季采摘，适合全家出游。位于宁国市郊，距离市区仅20分钟车程，方便停车，有住宿和农家饭。',
+          commentCount: 65,
+          location: ['安徽', '宁国', '万家']
+        },
+        {
+          name: '大军农家',
+          img: '/static/image/njg_15.jpg',
+          score: 3.6,
+          desc: '农家灶台饭，体验最简单的生活。',
+          commentCount: 24,
+          location: ['安徽', '宁国', '南极']
+        },
+        {
+          name: '阿勇龙虾垂钓',
+          img: '/static/image/njg_16.jpg',
+          score: 5,
+          desc: '“采菊东篱下,悠然见南山”的体验',
+          commentCount: 24,
+          location: ['安徽', '宁国', '南极']
+        },
+        {
+          name: '闲逸农家乐园',
+          img: '/static/image/njg_17.jpg',
+          score: 4.6,
+          desc: '农家灶台饭，体验最简单的生活。',
+          commentCount: 24,
+          location: ['安徽', '宁国', '南极']
+        },
+        {
+          name: '野外农家乐',
+          img: '/static/image/njg_18.jpg',
           score: 2.5,
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
