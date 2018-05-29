@@ -5,7 +5,24 @@
       <p class="ng-list-title-main">套餐推荐</p>
       <p class="ng-list-title-sub">带上相机和心情，其他的交给我们。</p>
     </div>
-    <ul class="ng-ul-list">
+    <ul class="ng-ul-list clear">
+      <li>
+        <Carousel>
+          <CarouselItem><img src="/static/image/xl_1.jpg"></CarouselItem>
+          <CarouselItem><img src="/static/image/xl_2.jpg"></CarouselItem>
+        </Carousel>
+        <span class="ng-ul-list-tag">网红红杉林</span>
+        <div class="ng-ul-list-path">
+          <Timeline>
+            <TimelineItem>第一天上午. 红杉林</TimelineItem>
+            <TimelineItem>第一天下午. 天池景区</TimelineItem>
+            <TimelineItem>第一天晚上. 万家农家乐</TimelineItem>
+            <TimelineItem>第二天上午. 万家农家乐</TimelineItem>
+          </Timeline>
+        </div>
+      </li>
+    </ul>
+    <ul class="ng-ul-list clear">
       <li v-for="(item,index) in data" :key="index">
         <img :src="item.img">
         <div class="ng-njl-list-info">
@@ -76,8 +93,7 @@ ul.ng-ul-list > li{
   height: 310px;
   box-sizing: border-box;
   float: left;
-  box-shadow:#777 0px 0px 2px;
-  padding: 6px 8px;
+  position: relative;
   border-radius: 1px;
   margin-right: 1%;
 }
@@ -88,52 +104,18 @@ ul.ng-ul-list > li img{
   width: 100%;
   border-radius: 2px;
   border:1px solid #EEE;
+  border-radius: 2px;
 }
-ul.ng-ul-list > li .ng-njl-list-info{
-  text-align: left;
+ul.ng-ul-list > li .ng-ul-list-tag{
+  position: absolute;
+  top:0;
+  right: 10px;
+  background-color: rgba(199,125,123,.9);
+  color: #ffffff;
+  padding:2px 6px;
 }
-ul.ng-ul-list > li .ng-njl-list-info h3{
-  color:#555;
-  text-align: center;
-}
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title > h3{
+ul.ng-ul-list > li .ng-ul-list-path{
   float: left;
-}
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location{
-  color: #bbbec4;
-  font-weight: 200;
-  font-size: 12px;
-}
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location i{
-  width:10px;
-  margin:0 5px 0 10px;
-}
-/* ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location::before{
-  content: "(";
-}
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location::after{
-  content:")";
-} */
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title > span{
-  float: right;
-}
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-desc{
-  color:#666;
-  height: 40px;
-}
-i.ivu-icon-ios-star,
-i.ivu-icon-ios-star-half,
-i.ivu-icon-ios-star-outline{
-  color: rgb(231, 199, 13);
-}
-ul.ng-ul-list > li .ng-njl-list-info-tag i{
-  width: 15px;
-  cursor: pointer;
-}
-ul.ng-ul-list > li .ng-njl-list-info-tag i.enable{
-  color:#2fbabe;
-}
-ul.ng-ul-list > li .ng-njl-list-info-tag i.disable{
-  color: #DDD;
+  width:50%;
 }
 </style>
