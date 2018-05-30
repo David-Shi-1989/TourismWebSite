@@ -13,12 +13,11 @@
         </Carousel>
         <span class="ng-ul-list-tag">网红红杉林</span>
         <div class="ng-ul-list-path">
-          <Timeline>
-            <TimelineItem>第一天上午. 红杉林</TimelineItem>
-            <TimelineItem>第一天下午. 天池景区</TimelineItem>
-            <TimelineItem>第一天晚上. 万家农家乐</TimelineItem>
-            <TimelineItem>第二天上午. 万家农家乐</TimelineItem>
-          </Timeline>
+          <ul class="ng-ul-no-style ng-ul-li-f-l">
+            <li><span class="path-item">红杉林</span><i class="fa fa-arrow-right"></i></li>
+            <li><span class="path-item">天池</span><i class="fa fa-arrow-right"></i></li>
+            <li><span class="path-item">仙一农家乐</span></li>
+          </ul>
         </div>
       </li>
     </ul>
@@ -116,6 +115,17 @@ ul.ng-ul-list > li .ng-ul-list-tag{
 }
 ul.ng-ul-list > li .ng-ul-list-path{
   float: left;
-  width:50%;
+  width:100%;
+}
+div.ng-ul-list-path span.path-item{
+  color:#AAA;
+  border:1px solid #AAA;
+  padding:2px 4px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+div.ng-ul-list-path i.fa-arrow-right{
+  margin:0 5px;
+  color:#aaa;
 }
 </style>

@@ -50,6 +50,23 @@ body::-webkit-scrollbar-thumb{
 .clr{
   clear: both;
 }
+ul.ng-ul-no-style{
+  list-style: none;
+}
+ul.ng-ul-li-f-l{
+  zoom: 1;
+}
+ul.ng-ul-li-f-l::after{
+  display: block;
+  clear: both;
+  content: '';
+  width: 0;
+  height: 0;
+  visibility: hidden; 
+}
+ul.ng-ul-li-f-l > li{
+  float: left;
+}
 /***Header Menus***/
 /*一级菜单样式*/
 #ng_header a{
