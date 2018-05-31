@@ -50,6 +50,17 @@ body::-webkit-scrollbar-thumb{
 .clr{
   clear: both;
 }
+.ng-ul-list-none{
+  list-style: none;
+}
+.ng-colon-after::after{
+  content: ":";
+  margin: 0 2px;
+}
+.ng-rmb-before::before{
+  content: "¥";
+  margin: 0 2px;
+}
 /***Header Menus***/
 /*一级菜单样式*/
 #ng_header a{

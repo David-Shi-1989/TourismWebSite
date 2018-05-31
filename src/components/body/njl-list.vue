@@ -116,8 +116,6 @@
       </TabPane>
     </Tabs>
   </div>
-  
-  
 </template>
 
 <script>

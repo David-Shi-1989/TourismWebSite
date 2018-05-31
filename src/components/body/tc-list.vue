@@ -13,12 +13,28 @@
         </Carousel>
         <span class="ng-ul-list-tag">网红红杉林</span>
         <div class="ng-ul-list-path">
-          <Timeline>
-            <TimelineItem>第一天上午. 红杉林</TimelineItem>
-            <TimelineItem>第一天下午. 天池景区</TimelineItem>
-            <TimelineItem>第一天晚上. 万家农家乐</TimelineItem>
-            <TimelineItem>第二天上午. 万家农家乐</TimelineItem>
-          </Timeline>
+          <table class="tc-info-tb">
+            <tr>
+              <th style="width:65px;text-align:right;"></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td><span class="ng-colon-after">路线</span></td>
+              <td>
+                <span class="path-item-tag">红杉林</span>
+                <span class="path-item-tag">天池景区</span>
+                <span class="path-item-tag">天天农家乐</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="ng-colon-after">套餐内容</span></td>
+              <td><span>宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。</span></td>
+            </tr>
+            <tr>
+              <td><span class="ng-colon-after">价格</span></td>
+              <td><span class="ng-rmb-before money-item">399</span></td>
+            </tr>
+          </table>
         </div>
       </li>
     </ul>
@@ -59,36 +75,34 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "HelloWorld",
+  data() {
     return {
-      data: [
-        
-      ]
-    }
+      data: []
+    };
   }
-}
+};
 </script>
 
 <style scoped>
-div.ng-list-title{
+div.ng-list-title {
   text-align: left;
   margin-bottom: 10px;
 }
-div.ng-list-title p.ng-list-title-main{
+div.ng-list-title p.ng-list-title-main {
   font-size: 25px;
-  color:#484848;
+  color: #484848;
   font-weight: 700;
 }
-div.ng-list-title p.ng-list-title-sub{
+div.ng-list-title p.ng-list-title-sub {
   font-size: 16px;
-  color:#484848;
+  color: #484848;
   font-weight: 300;
 }
-ul.ng-ul-list{
+ul.ng-ul-list {
   list-style: none;
 }
-ul.ng-ul-list > li{
+ul.ng-ul-list > li {
   width: 19.2%;
   height: 310px;
   box-sizing: border-box;
@@ -97,25 +111,42 @@ ul.ng-ul-list > li{
   border-radius: 1px;
   margin-right: 1%;
 }
-ul.ng-ul-list > li:last-child{
+ul.ng-ul-list > li:last-child {
   margin-right: 0 !important;
 }
-ul.ng-ul-list > li img{
+ul.ng-ul-list > li img {
   width: 100%;
   border-radius: 2px;
-  border:1px solid #EEE;
+  border: 1px solid #eee;
   border-radius: 2px;
 }
-ul.ng-ul-list > li .ng-ul-list-tag{
+ul.ng-ul-list > li .ng-ul-list-tag {
   position: absolute;
-  top:0;
+  top: 0;
   right: 10px;
-  background-color: rgba(199,125,123,.9);
+  background-color: rgba(199, 125, 123, 0.9);
   color: #ffffff;
-  padding:2px 6px;
+  padding: 2px 6px;
 }
-ul.ng-ul-list > li .ng-ul-list-path{
+ul.ng-ul-list > li .ng-ul-list-path {
   float: left;
-  width:50%;
+}
+table.tc-info-tb td{
+  vertical-align: top;
+}
+table.tc-info-tb tr > td:first-child{
+  text-align: right;
+  padding-right: 5px;
+}
+span.path-item-tag {
+  border: 1px solid #aaa;
+  padding: 1px 2px;
+  color: #6a6a6a;
+  border-radius: 2px;
+  font-size: 12px;
+}
+span.money-item {
+  font-size: 19px;
+  color: #f60;
 }
 </style>
