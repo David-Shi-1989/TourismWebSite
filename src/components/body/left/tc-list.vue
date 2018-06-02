@@ -52,7 +52,6 @@
 </template>
 
 <script>
-import utilNumber from '../../utility/number'
 export default {
   data () {
     return {
@@ -65,8 +64,8 @@ export default {
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
           price: 399,
           likecount: 1321,
-          visitcount:188,
-          activeImgIndex:0
+          visitcount: 188,
+          activeImgIndex: 0
         },
         {
           id: '002a21a2',
@@ -76,8 +75,8 @@ export default {
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
           price: 199,
           likecount: 698,
-          visitcount:123,
-          activeImgIndex:0
+          visitcount: 123,
+          activeImgIndex: 0
         },
         {
           id: '002a213',
@@ -87,21 +86,13 @@ export default {
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
           price: 399,
           likecount: 478,
-          visitcount:79,
-          activeImgIndex:0
+          visitcount: 79,
+          activeImgIndex: 0
         }
       ]
     }
   },
   created () {
-    // function changeImg (index) {
-    //   var val = ((this.data[index].activeImgIndex+1) % (this.data[index].img.length))
-    //   this.data[index].activeImgIndex = val
-    // }
-    // for (let i = 0; i < this.data.length; i++) {
-    //   var timeInt = utilNumber.random(3000, 5000)
-    //   setInterval(changeImg.bind(this, i), timeInt)
-    // }
   },
   computed: {
     getData () {

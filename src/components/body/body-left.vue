@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import NjlList from './njl-list' // 农家乐列表
-import TcList from './tc-list' // 套餐列表
-import ArticleList from './article-list' // 攻略列表
+import NjlList from './left/njl-list' // 农家乐列表
+import TcList from './left/tc-list' // 套餐列表
+import ArticleList from './left/article-list' // 攻略列表
 export default {
   data () {
     return {
