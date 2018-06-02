@@ -9,9 +9,12 @@
       <li v-for="(item,index) in data" :key="index" :data-id="item.id">
         <div class="ng-tc-wrap ng-shadow">
           <div class="ng-tc-album">
-            <transition name="album-item" v-for="(imgItem,imgIndex) in item.img" :key="imgIndex">
+            <Carousel v-model="item.activeImgIndex">
+              <CarouselItem v-for="(imgItem,imgIndex) in item.img" :key="imgIndex"><img :src="imgItem"></CarouselItem>
+            </Carousel>
+            <!-- <transition name="album-item" v-for="(imgItem,imgIndex) in item.img" :key="imgIndex">
               <img v-if="item.activeImgIndex == imgIndex" :src="imgItem">
-            </transition>
+            </transition> -->
           </div>
           <span class="ng-tc-tag">{{item.title}}</span>
           <div class="ng-tc-info">
@@ -49,6 +52,7 @@
 </template>
 
 <script>
+import utilNumber from '../../utility/number'
 export default {
   data () {
     return {
@@ -90,13 +94,14 @@ export default {
     }
   },
   created () {
-    function changeImg () {
-      this.data.forEach(function (item) {
-        var val = ((item.activeImgIndex+1) % (item.img.length))
-        item.activeImgIndex = val
-      })
-    }
-    setInterval(changeImg.bind(this), 5000)
+    // function changeImg (index) {
+    //   var val = ((this.data[index].activeImgIndex+1) % (this.data[index].img.length))
+    //   this.data[index].activeImgIndex = val
+    // }
+    // for (let i = 0; i < this.data.length; i++) {
+    //   var timeInt = utilNumber.random(3000, 5000)
+    //   setInterval(changeImg.bind(this, i), timeInt)
+    // }
   },
   computed: {
     getData () {
@@ -117,13 +122,8 @@ div.ng-tc-album{
   position: relative;
   cursor: pointer;
 }
-div.ng-tc-album > img{
+div.ng-tc-album img{
   display: block;
-}
-div.ng-tc-album > img:nth-child(n+2){
-  position: absolute;
-  top:0;
-  left: 0;
 }
 div.ng-list-title {
   text-align: left;
@@ -220,10 +220,10 @@ ul.ng-ul-list > li .ng-tc-info .ng-tc-btn i.fa-heart-o{
   color:#FFC0CB;
 }
 .album-item-enter-active{
-  animation: album-img-in .2s;
+  animation: album-img-in .5s;
 }
 .album-item-leave-active{
-  animation: album-img-leave .2s;
+  animation: album-img-leave .5s;
 }
 @keyframes album-img-in {
   0% {
