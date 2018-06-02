@@ -9,7 +9,9 @@
       <li v-for="(item,index) in data" :key="index" :data-id="item.id">
         <div class="ng-tc-wrap ng-shadow">
           <div class="ng-tc-album">
-            <img v-for="(imgItem,imgIndex) in item.img" :key="imgIndex" :src="imgItem" :style="{display:(imgIndex==0?'block':'none')}">
+            <transition name="album-item" v-for="(imgItem,imgIndex) in item.img" :key="imgIndex">
+              <img v-if="item.activeImgIndex == imgIndex" :src="imgItem">
+            </transition>
           </div>
           <span class="ng-tc-tag">{{item.title}}</span>
           <div class="ng-tc-info">
@@ -59,7 +61,8 @@ export default {
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
           price: 399,
           likecount: 1321,
-          visitcount:188
+          visitcount:188,
+          activeImgIndex:0
         },
         {
           id: '002a21a2',
@@ -69,7 +72,8 @@ export default {
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
           price: 199,
           likecount: 698,
-          visitcount:123
+          visitcount:123,
+          activeImgIndex:0
         },
         {
           id: '002a213',
@@ -79,9 +83,28 @@ export default {
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
           price: 399,
           likecount: 478,
-          visitcount:79
+          visitcount:79,
+          activeImgIndex:0
         }
       ]
+    }
+  },
+  created () {
+    function changeImg () {
+      this.data.forEach(function (item) {
+        var val = ((item.activeImgIndex+1) % (item.img.length))
+        item.activeImgIndex = val
+      })
+    }
+    setInterval(changeImg.bind(this), 5000)
+  },
+  computed: {
+    getData () {
+      var arr = this.data
+      arr.forEach(function (item) {
+        item.activeImgIndex = 0
+      })
+      return arr
     }
   }
 }
@@ -195,5 +218,28 @@ ul.ng-ul-list > li .ng-tc-info .ng-tc-btn i{
 ul.ng-ul-list > li .ng-tc-info .ng-tc-btn i.fa-heart,
 ul.ng-ul-list > li .ng-tc-info .ng-tc-btn i.fa-heart-o{
   color:#FFC0CB;
+}
+.album-item-enter-active{
+  animation: album-img-in .2s;
+}
+.album-item-leave-active{
+  animation: album-img-leave .2s;
+}
+@keyframes album-img-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes album-img-leave {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
 </style>
