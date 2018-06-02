@@ -2,41 +2,39 @@
 <template>
   <div style="padding:0 15px;">
     <div class="ng-list-title">
-      <p class="ng-list-title-main">套餐推荐</p>
-      <p class="ng-list-title-sub">带上相机和心情，其他的交给我们。</p>
+      <p class="ng-list-title-main">游记攻略</p>
+      <p class="ng-list-title-sub">先看看攻略，再出去玩。</p>
     </div>
     <ul class="ng-ul-list clear">
       <li>
-        <div class="ng-shadow">
-          <div class="ng-tc-album">
-            <img src="/static/image/xl_1.jpg">
-            <img src="/static/image/xl_2.jpg">
-          </div>
-          <span class="ng-tc-tag">网红红杉林</span>
-          <div class="ng-tc-info">
-            <table class="tc-info-tb">
-              <tr>
-                <th style="width:65px;text-align:right;"></th>
-                <th></th>
-              </tr>
-              <tr>
-                <td><span class="ng-colon-after">路线</span></td>
-                <td>
-                  <span class="path-item-tag">红杉林</span>
-                  <span class="path-item-tag">天池景区</span>
-                  <span class="path-item-tag">天天农家乐</span>
-                </td>
-              </tr>
-              <tr>
-                <td><span class="ng-colon-after">套餐内容</span></td>
-                <td><span>宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。</span></td>
-              </tr>
-              <tr>
-                <td><span class="ng-colon-after">价格</span></td>
-                <td><span class="ng-rmb-before money-item">399</span></td>
-              </tr>
-            </table>
-          </div>
+        <Carousel>
+          <CarouselItem><img src="/static/image/xl_1.jpg"></CarouselItem>
+          <CarouselItem><img src="/static/image/xl_2.jpg"></CarouselItem>
+        </Carousel>
+        <span class="ng-ul-list-tag">网红红杉林</span>
+        <div class="ng-ul-list-path">
+          <table class="tc-info-tb">
+            <tr>
+              <th style="width:65px;text-align:right;"></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td><span class="ng-colon-after">路线</span></td>
+              <td>
+                <span class="path-item-tag">红杉林</span>
+                <span class="path-item-tag">天池景区</span>
+                <span class="path-item-tag">天天农家乐</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="ng-colon-after">套餐内容</span></td>
+              <td><span>宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。</span></td>
+            </tr>
+            <tr>
+              <td><span class="ng-colon-after">价格</span></td>
+              <td><span class="ng-rmb-before money-item">399</span></td>
+            </tr>
+          </table>
         </div>
       </li>
     </ul>
@@ -87,17 +85,6 @@ export default {
 </script>
 
 <style scoped>
-div.ng-tc-album{
-  position: relative;
-}
-div.ng-tc-album > img{
-  display: block;
-}
-div.ng-tc-album > img:nth-child(n+2){
-  position: absolute;
-  top:0;
-  left: 0;
-}
 div.ng-list-title {
   text-align: left;
   margin-bottom: 10px;
@@ -116,7 +103,7 @@ ul.ng-ul-list {
   list-style: none;
 }
 ul.ng-ul-list > li {
-  width: 25%;
+  width: 19.2%;
   height: 310px;
   box-sizing: border-box;
   float: left;
@@ -129,10 +116,11 @@ ul.ng-ul-list > li:last-child {
 }
 ul.ng-ul-list > li img {
   width: 100%;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #eee;
+  border-radius: 2px;
 }
-ul.ng-ul-list > li .ng-tc-tag {
+ul.ng-ul-list > li .ng-ul-list-tag {
   position: absolute;
   top: 0;
   right: 10px;
@@ -140,11 +128,8 @@ ul.ng-ul-list > li .ng-tc-tag {
   color: #ffffff;
   padding: 2px 6px;
 }
-ul.ng-ul-list > li .ng-tc-info {
-  width: 100%;
-  padding:5px 0;
-  background-color: #fcfcfc;
-  border:1px solid #e0e0e0;
+ul.ng-ul-list > li .ng-ul-list-path {
+  float: left;
 }
 table.tc-info-tb td{
   vertical-align: top;
@@ -162,6 +147,6 @@ span.path-item-tag {
 }
 span.money-item {
   font-size: 19px;
-  color: #ff9d00;
+  color: #f60;
 }
 </style>

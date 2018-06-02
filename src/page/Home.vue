@@ -1,21 +1,23 @@
 <template>
-  <div style="padding-top:10px;">
-    <NjlList></NjlList>
-    <TcList></TcList>
+  <div style="padding:10px 200px;width:100%;" class="clear">
+    <div style="float:left;width:70%;">
+      <LeftBody></LeftBody>
+    </div>
+    <div style="overflow:auto;border-left:1px solid #ccc;">
+      <RightBody></RightBody>
+    </div>
   </div>
 </template>
 
 <script>
-import NjlList from '../components/body/njl-list'
-import TcList from '../components/body/tc-list'
+import LeftBody from '../components/body/body-left'
+import RightBody from '../components/body/body-right'
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   },
-  components: {NjlList, TcList}
+  components: {LeftBody, RightBody}
 }
 </script>
 

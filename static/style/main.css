@@ -50,7 +50,6 @@ body::-webkit-scrollbar-thumb{
 .clr{
   clear: both;
 }
-<<<<<<< HEAD
 .ng-ul-list-none{
   list-style: none;
 }
@@ -61,7 +60,7 @@ body::-webkit-scrollbar-thumb{
 .ng-rmb-before::before{
   content: "¥";
   margin: 0 2px;
-=======
+}
 ul.ng-ul-no-style{
   list-style: none;
 }
@@ -78,7 +77,9 @@ ul.ng-ul-li-f-l::after{
 }
 ul.ng-ul-li-f-l > li{
   float: left;
->>>>>>> 91a7539153be850b2d3ba77f0c1a772840efccc5
+}
+.ng-shadow{
+  box-shadow: #eee 0 0 3px;
 }
 /***Header Menus***/
 /*一级菜单样式*/
