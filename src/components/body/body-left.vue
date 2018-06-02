@@ -1,4 +1,4 @@
-<!--主页左侧 -->
+<!--活动 -->
 <template>
   <div style="width:100%;">
     <TcList></TcList>

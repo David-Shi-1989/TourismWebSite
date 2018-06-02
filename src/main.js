@@ -6,7 +6,6 @@ import 'iview/dist/styles/iview.css'
 import App from './App'
 import router from './router'
 import $ from 'jquery'
-import '~/style/main.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 Vue.config.productionTip = false
