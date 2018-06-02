@@ -43,3 +43,6 @@ ul.ng-ul-li-f-l > li{
 .ng-shadow{
   box-shadow: #eee 0 0 3px;
 }
+.text-indent-2{
+  text-indent: 2rem;
+}

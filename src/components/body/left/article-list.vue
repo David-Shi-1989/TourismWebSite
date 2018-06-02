@@ -8,8 +8,8 @@
     <ul class="ng-ul-list clear">
       <li>
         <Carousel>
-          <CarouselItem><img src="/static/image/xl_1.jpg"></CarouselItem>
-          <CarouselItem><img src="/static/image/xl_2.jpg"></CarouselItem>
+          <CarouselItem><img src="/static/image/tc/xl_2.jpg"></CarouselItem>
+          <CarouselItem><img src="/static/image/tc/xl_2.jpg"></CarouselItem>
         </Carousel>
         <span class="ng-ul-list-tag">网红红杉林</span>
         <div class="ng-ul-list-path">

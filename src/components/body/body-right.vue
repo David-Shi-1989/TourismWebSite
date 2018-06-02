@@ -20,5 +20,6 @@ export default {
 <style scoped>
 div.wrap{
   padding: 0 20px;
+  overflow: hidden;
 }
 </style>
