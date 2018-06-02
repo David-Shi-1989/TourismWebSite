@@ -1,6 +1,6 @@
 <template>
   <div style="padding:10px 200px;width:100%;" class="clear">
-    <div style="float:left;width:70%;">
+    <div style="float:left;width:75%;">
       <LeftBody></LeftBody>
     </div>
     <div style="overflow:auto;border-left:1px solid #ccc;">
