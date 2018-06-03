@@ -40,6 +40,12 @@ ul.ng-ul-li-f-l::after{
 ul.ng-ul-li-f-l > li{
   float: left;
 }
+.ng-f-l{
+  float: left;
+}
+.ng-f-r{
+  float: right;
+}
 .ng-shadow{
   box-shadow: #eee 0 0 3px;
 }

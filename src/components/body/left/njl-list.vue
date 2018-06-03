@@ -1,6 +1,6 @@
 <!--农家乐 列表 -->
 <template>
-  <div style="padding:0 10px 10px 10px;">
+  <div>
     <div class="ng-list-title">
       <p class="ng-list-title-main">农家乐推荐</p>
       <p class="ng-list-title-sub">本地资深玩家体验推荐</p>
@@ -13,21 +13,21 @@
               <img :src="item.img">
               <div class="ng-njl-list-info">
                 <div class="ng-njl-list-info-title">
-                  <h3>
-                    {{item.name}}
+                  <h3>{{item.name}}</h3>
+                  <p>
                     <span class="ng-njl-list-info-title-location">
                       <i class="fa fa-map-marker"></i>
                       <span v-for="(locationItem,index) in item.location" :key="'location_' + index">
                         {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
                       </span>
                     </span>
-                  </h3>
-                  <span :title="item.score + '分'">
-                    <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
-                    <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
-                    <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
-                    <span class="color-disabled">{{item.commentCount}}条评价</span>
-                  </span>
+                    <span :title="item.score + '分'" class="ng-njl-list-info-title-score">
+                      <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
+                      <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
+                      <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
+                      <span class="color-disabled">{{item.commentCount}}条评价</span>
+                    </span>
+                  </p>
                   <div class="clr"></div>
                 </div>
                 <p class="ng-njl-list-info-desc">{{item.desc}}</p>
@@ -49,21 +49,21 @@
               <img :src="item.img">
               <div class="ng-njl-list-info">
                 <div class="ng-njl-list-info-title">
-                  <h3>
-                    {{item.name}}
+                  <h3>{{item.name}}</h3>
+                  <p>
                     <span class="ng-njl-list-info-title-location">
                       <i class="fa fa-map-marker"></i>
                       <span v-for="(locationItem,index) in item.location" :key="'location_' + index">
                         {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
                       </span>
                     </span>
-                  </h3>
-                  <span :title="item.score + '分'">
-                    <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
-                    <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
-                    <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
-                    <span class="color-disabled">{{item.commentCount}}条评价</span>
-                  </span>
+                    <span :title="item.score + '分'" class="ng-njl-list-info-title-score">
+                      <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
+                      <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
+                      <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
+                      <span class="color-disabled">{{item.commentCount}}条评价</span>
+                    </span>
+                  </p>
                   <div class="clr"></div>
                 </div>
                 <p class="ng-njl-list-info-desc">{{item.desc}}</p>
@@ -85,21 +85,21 @@
               <img :src="item.img">
               <div class="ng-njl-list-info">
                 <div class="ng-njl-list-info-title">
-                  <h3>
-                    {{item.name}}
+                  <h3>{{item.name}}</h3>
+                  <p>
                     <span class="ng-njl-list-info-title-location">
                       <i class="fa fa-map-marker"></i>
                       <span v-for="(locationItem,index) in item.location" :key="'location_' + index">
                         {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
                       </span>
                     </span>
-                  </h3>
-                  <span :title="item.score + '分'">
-                    <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
-                    <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
-                    <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
-                    <span class="color-disabled">{{item.commentCount}}条评价</span>
-                  </span>
+                    <span :title="item.score + '分'" class="ng-njl-list-info-title-score">
+                      <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
+                      <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
+                      <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
+                      <span class="color-disabled">{{item.commentCount}}条评价</span>
+                    </span>
+                  </p>
                   <div class="clr"></div>
                 </div>
                 <p class="ng-njl-list-info-desc">{{item.desc}}</p>
@@ -155,14 +155,6 @@ export default {
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
           location: ['安徽', '宁国', '南极']
-        },
-        {
-          name: '徽州农家',
-          img: '/static/image/njg_5.jpg',
-          score: 2.5,
-          desc: '农家灶台饭，体验最简单的生活。',
-          commentCount: 24,
-          location: ['安徽', '黄山', '歙县']
         }
       ],
       data2: [
@@ -197,14 +189,6 @@ export default {
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
           location: ['安徽', '宁国', '南极']
-        },
-        {
-          name: '葡萄乐摘',
-          img: '/static/image/njg_13.jpg',
-          score: 2.5,
-          desc: '农家灶台饭，体验最简单的生活。',
-          commentCount: 24,
-          location: ['安徽', '黄山', '歙县']
         }
       ],
       data3: [
@@ -239,14 +223,6 @@ export default {
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
           location: ['安徽', '宁国', '南极']
-        },
-        {
-          name: '野外农家乐',
-          img: '/static/image/njg_18.jpg',
-          score: 2.5,
-          desc: '农家灶台饭，体验最简单的生活。',
-          commentCount: 24,
-          location: ['安徽', '黄山', '歙县']
         }
       ]
     }
@@ -258,16 +234,6 @@ export default {
 div.ng-list-title{
   text-align: left;
 }
-div.ng-list-title p.ng-list-title-main{
-  font-size: 25px;
-  color:#484848;
-  font-weight: 700;
-}
-div.ng-list-title p.ng-list-title-sub{
-  font-size: 16px;
-  color:#484848;
-  font-weight: 300;
-}
 div.ng-ul-list-wrap{
   padding: 5px;
 }
@@ -275,8 +241,8 @@ ul.ng-ul-list{
   list-style: none;
 }
 ul.ng-ul-list > li{
-  width: 19.2%;
-  height: 310px;
+  width: 24%;
+  height: 280px;
   box-sizing: border-box;
   float: left;
   box-shadow:#777 0px 0px 2px;
@@ -297,32 +263,22 @@ ul.ng-ul-list > li .ng-njl-list-info{
 }
 ul.ng-ul-list > li .ng-njl-list-info h3{
   color:#555;
-  text-align: center;
-}
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title > h3{
-  float: left;
+  text-align: left;
 }
 ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location{
   color: #bbbec4;
   font-weight: 200;
   font-size: 12px;
 }
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location i{
-  width:10px;
-  margin:0 5px 0 10px;
+ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-score{
+  float: right;
 }
-/* ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location::before{
-  content: "(";
-}
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-location::after{
-  content:")";
-} */
 ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title > span{
   float: right;
 }
 ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-desc{
   color:#666;
-  height: 40px;
+  height: 60px;
 }
 i.ivu-icon-ios-star,
 i.ivu-icon-ios-star-half,

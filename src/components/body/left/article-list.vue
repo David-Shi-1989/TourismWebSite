@@ -1,71 +1,50 @@
 <!--旅行社 列表 -->
 <template>
-  <div style="padding:0 15px;">
+  <div class="wrap">
     <div class="ng-list-title">
       <p class="ng-list-title-main">游记攻略</p>
       <p class="ng-list-title-sub">先看看攻略，再出去玩。</p>
     </div>
-    <ul class="ng-ul-list clear">
-      <li>
-        <Carousel>
-          <CarouselItem><img src="/static/image/tc/xl_2.jpg"></CarouselItem>
-          <CarouselItem><img src="/static/image/tc/xl_2.jpg"></CarouselItem>
-        </Carousel>
-        <span class="ng-ul-list-tag">网红红杉林</span>
-        <div class="ng-ul-list-path">
-          <table class="tc-info-tb">
-            <tr>
-              <th style="width:65px;text-align:right;"></th>
-              <th></th>
-            </tr>
-            <tr>
-              <td><span class="ng-colon-after">路线</span></td>
-              <td>
-                <span class="path-item-tag">红杉林</span>
-                <span class="path-item-tag">天池景区</span>
-                <span class="path-item-tag">天天农家乐</span>
-              </td>
-            </tr>
-            <tr>
-              <td><span class="ng-colon-after">套餐内容</span></td>
-              <td><span>宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。</span></td>
-            </tr>
-            <tr>
-              <td><span class="ng-colon-after">价格</span></td>
-              <td><span class="ng-rmb-before money-item">399</span></td>
-            </tr>
-          </table>
+    <ul class="ng-ul-list-none ng-article-wrap">
+      <li class="clear">
+        <img class="ng-article-item-img ng-f-l" src="/static/image/article/njpl1.jpg">
+        <div class="ng-article-item-info-wrap">
+          <router-link to="/article/2" class="ng-article-title">宁国南极漂流</router-link>
+          <p class="ng-article-info-wrap">
+            <span class="ng-article-location"><i class="fa fa-map-marker"></i><span>宁国·南极乡</span></span>
+            <span class="ng-article-user">
+              <Avatar src="/static/image/avatar/1.jpg" size="small"></Avatar>
+              <span class="ng-article-name">Lucky_小仙女</span>   
+            </span>
+
+            <span class="ng-article-date">2018-6-3 14:21:11</span>
+          </p>
+          <p class="ng-article-content"> 漂流属二人皮筏，峡谷落差式漂流，总置身于南极漂流，女人一路尖叫，男人一路欢笑。曲折多变的天然河道，构成60多处S型弯道，大小落差100多处。有惊无险的漂流刺激体验和沿途峡谷七彩壮观的岩石地质景观，让你尽情享受视觉冲击与心灵震撼相结合的双重快感！ </p>
+          <div class="ng-article-data-wrap">
+            <span><i class="fa fa-eye"></i>397</span>
+            <span><i class="fa fa-image"></i>17</span>
+            <span><i class="fa fa-thumbs-o-up"></i>120</span>
+          </div>
         </div>
       </li>
-    </ul>
-    <ul class="ng-ul-list clear">
-      <li v-for="(item,index) in data" :key="index">
-        <img :src="item.img">
-        <div class="ng-njl-list-info">
-          <div class="ng-njl-list-info-title">
-            <h3>
-              {{item.name}}
-              <span class="ng-njl-list-info-title-location">
-                <i class="fa fa-map-marker"></i>
-                <span v-for="(locationItem,index) in item.location" :key="'location_' + index">
-                  {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
-                </span>
-              </span>
-            </h3>
-            <span :title="item.score + '分'">
-              <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
-              <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
-              <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
-              <span class="color-disabled">{{item.commentCount}}条评价</span>
+      <li class="clear">
+        <img class="ng-article-item-img ng-f-l" src="/static/image/tc/mw_1.jpg">
+        <div class="ng-article-item-info-wrap">
+          <router-link to="/article/2" class="ng-article-title">恩龙世界木屋村</router-link>
+          <p class="ng-article-info-wrap">
+            <span class="ng-article-location"><i class="fa fa-map-marker"></i><span>宁国·港口</span></span>
+            <span class="ng-article-user">
+              <Avatar src="/static/image/avatar/2.jpg" size="small"></Avatar>
+              <span class="ng-article-name">静默大仙</span> 
             </span>
-            <div class="clr"></div>
-          </div>
-          <p class="ng-njl-list-info-desc">{{item.desc}}</p>
-          <div class="ng-njl-list-info-tag">
-            <span title="Wifi"><i class="fa fa-wifi enable"></i></span>
-            <span title="住宿"><i class="fa fa-hotel enable"></i></span>
-            <span title="停车"><i class="fa fa-car enable"></i></span>
-            <span title="洗澡"><i class="fa fa-bathtub disable"></i></span>
+
+            <span class="ng-article-date">2018-6-1 05:04:46</span>
+          </p>
+          <p class="ng-article-content">恩龙世界木屋村位于宁国市西北8公里处，是由一幢幢绿色植被掩映下的小木屋组成的度假村，这些木屋都可以入住，环境很好。只参观或者入住木屋不需要购买门票，只有参观主要景点恩龙民俗风情园才需要购买门票。恩龙民俗风情园内分布着苗寨、傣寨、佤寨、蒙古包、摩俊人家等多个少数民族特色村寨，有民族表演可看。游玩项目比如高空溜索、骑马等都需要另外付费，参考价每项在10-30元不等。水上乐园里可以坐游艇，垂钓。</p>
+          <div class="ng-article-data-wrap">
+            <span><i class="fa fa-eye"></i>983</span>
+            <span><i class="fa fa-image"></i>21</span>
+            <span><i class="fa fa-thumbs-o-up"></i>243</span>
           </div>
         </div>
       </li>
@@ -85,68 +64,95 @@ export default {
 </script>
 
 <style scoped>
-div.ng-list-title {
-  text-align: left;
-  margin-bottom: 10px;
+div.wrap {
+  padding: 15px 20px 15px 0;
 }
-div.ng-list-title p.ng-list-title-main {
-  font-size: 25px;
-  color: #484848;
-  font-weight: 700;
+ul.ng-article-wrap{
+  background-color: #fff;
+  padding:20px;
+  border:1px solid #e6e6e6;
 }
-div.ng-list-title p.ng-list-title-sub {
-  font-size: 16px;
-  color: #484848;
-  font-weight: 300;
+ul.ng-article-wrap > li{
+  height: 182px;
+  box-sizing: content-box;
+  padding: 20px 10px;
+  border-bottom: 1px solid #eee;
+  transition: all .4s;
 }
-ul.ng-ul-list {
-  list-style: none;
+ul.ng-article-wrap > li:last-child{
+  padding-bottom: 0;
+  border:0;
 }
-ul.ng-ul-list > li {
-  width: 19.2%;
-  height: 310px;
-  box-sizing: border-box;
-  float: left;
+ul.ng-article-wrap > li:hover{
+  background-color: #fafafa;
+}
+ul.ng-article-wrap > li:hover .ng-article-title{
+  color: #2d8cf0;
+}
+ul.ng-article-wrap img.ng-article-item-img{
+  width:260px;
+  border:1px solid #efefef;
+}
+.ng-article-item-info-wrap{
   position: relative;
-  border-radius: 1px;
-  margin-right: 1%;
+  overflow: auto;
+  padding-left: 20px;
+  height: 100%;
 }
-ul.ng-ul-list > li:last-child {
-  margin-right: 0 !important;
+.ng-article-item-info-wrap .ng-article-title{
+  color: #444;
+  transition: color .3s;
+  font-size: 22px;
 }
-ul.ng-ul-list > li img {
-  width: 100%;
-  border-radius: 2px;
-  border: 1px solid #eee;
-  border-radius: 2px;
+.ng-article-item-info-wrap .ng-article-title:hover{
+  color:#57a3f3;
 }
-ul.ng-ul-list > li .ng-ul-list-tag {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  background-color: rgba(199, 125, 123, 0.9);
-  color: #ffffff;
-  padding: 2px 6px;
+.ng-article-item-info-wrap .ng-article-info-wrap{
+  margin:5px 0;
 }
-ul.ng-ul-list > li .ng-ul-list-path {
+.ng-article-item-info-wrap .ng-article-name{
+  color:#e69233;
+  margin-right: 20px;
+}
+.ng-article-item-info-wrap .ng-article-location{
+  color:#AAA;
+  margin-right: 20px;
+  display: block;
   float: left;
+  width:100px;
 }
-table.tc-info-tb td{
-  vertical-align: top;
+.ng-article-item-info-wrap .ng-article-location i{
+  margin-right: 4px;
 }
-table.tc-info-tb tr > td:first-child{
+.ng-article-item-info-wrap .ng-article-user{
+  float: left;
+  display: block;
+  width:200px;
+}
+.ng-article-item-info-wrap .ng-article-date{
+  color:#aaa;
+}
+.ng-article-item-info-wrap .ng-article-date::before{
+  content: '发表于';
+  margin-right: 10px;
+}
+.ng-article-item-info-wrap .ng-article-content{
+  color: #777;
+  font-size: 14px;
+  padding: 5px 0;
+}
+.ng-article-item-info-wrap .ng-article-data-wrap{
+  position: absolute;
+  bottom: 0;
+  color: #999;
   text-align: right;
-  padding-right: 5px;
 }
-span.path-item-tag {
-  border: 1px solid #aaa;
-  padding: 1px 2px;
-  color: #6a6a6a;
-  border-radius: 2px;
+.ng-article-item-info-wrap .ng-article-data-wrap i.fa{
   font-size: 12px;
+  margin-right: 3px;
 }
-span.money-item {
-  font-size: 19px;
-  color: #f60;
+.ng-article-item-info-wrap .ng-article-data-wrap > span{
+  margin-right: 20px;
+  cursor: pointer;
 }
 </style>

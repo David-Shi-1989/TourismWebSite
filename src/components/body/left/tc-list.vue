@@ -1,6 +1,6 @@
 <!--旅行社 列表 -->
 <template>
-  <div style="padding:0 15px;">
+  <div>
     <div class="ng-list-title">
       <p class="ng-list-title-main">套餐推荐</p>
       <p class="ng-list-title-sub">带上相机和心情，其他的交给我们。</p>
@@ -119,16 +119,6 @@ div.ng-tc-album img{
 div.ng-list-title {
   text-align: left;
   margin-bottom: 10px;
-}
-div.ng-list-title p.ng-list-title-main {
-  font-size: 25px;
-  color: #484848;
-  font-weight: 700;
-}
-div.ng-list-title p.ng-list-title-sub {
-  font-size: 16px;
-  color: #484848;
-  font-weight: 300;
 }
 ul.ng-ul-list {
   list-style: none;
