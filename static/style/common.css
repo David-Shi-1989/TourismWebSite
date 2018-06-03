@@ -52,6 +52,12 @@ ul.ng-ul-li-f-l > li{
 .text-indent-2{
   text-indent: 2rem;
 }
+.text-align-l{
+  text-align: left;
+}
+.text-align-r{
+  text-align: right;
+}
 .fs-sm{
   font-size: 12px;
 }
