@@ -124,7 +124,7 @@ ul.ng-ul-list {
   list-style: none;
 }
 ul.ng-ul-list > li{
-  width: 31%;
+  width: 29%;
   box-sizing: border-box;
   float: left;
   position: relative;

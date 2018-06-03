@@ -14,7 +14,7 @@
             <span class="ng-article-location"><i class="fa fa-map-marker"></i><span>宁国·南极乡</span></span>
             <span class="ng-article-user">
               <Avatar src="/static/image/avatar/1.jpg" size="small"></Avatar>
-              <span class="ng-article-name">Lucky_小仙女</span>   
+              <span class="ng-article-name">Lucky_小仙女</span>
             </span>
 
             <span class="ng-article-date">2018-6-3 14:21:11</span>
@@ -35,7 +35,7 @@
             <span class="ng-article-location"><i class="fa fa-map-marker"></i><span>宁国·港口</span></span>
             <span class="ng-article-user">
               <Avatar src="/static/image/avatar/2.jpg" size="small"></Avatar>
-              <span class="ng-article-name">静默大仙</span> 
+              <span class="ng-article-name">静默大仙</span>
             </span>
 
             <span class="ng-article-date">2018-6-1 05:04:46</span>
@@ -69,7 +69,7 @@ div.wrap {
 }
 ul.ng-article-wrap{
   background-color: #fff;
-  padding:20px;
+  padding:10px 20px;
   border:1px solid #e6e6e6;
 }
 ul.ng-article-wrap > li{

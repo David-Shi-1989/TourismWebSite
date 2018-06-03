@@ -2,18 +2,22 @@
 <template>
   <div class="wrap">
     <xActivity></xActivity>
+    <xNjlRank></xNjlRank>
+    <xComment></xComment>
   </div>
 </template>
 
 <script>
 import xActivity from './right/activity'
+import xComment from './right/comment'
+import xNjlRank from './right/njl-rank'
 export default {
   data () {
     return {
       data: []
     }
   },
-  components: {xActivity}
+  components: {xActivity, xNjlRank, xComment}
 }
 </script>
 

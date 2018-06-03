@@ -21,11 +21,10 @@
                         {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
                       </span>
                     </span>
-                    <span :title="item.score + '分'" class="ng-njl-list-info-title-score">
-                      <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
-                      <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
-                      <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
-                      <span class="color-disabled">{{item.commentCount}}条评价</span>
+                    <span class="ng-f-r">
+                      <xScoreStar v-model="item.score">
+                        <span class="color-disabled" slot="mySlot">{{item.commentCount}}条评价</span>
+                      </xScoreStar>
                     </span>
                   </p>
                   <div class="clr"></div>
@@ -57,11 +56,10 @@
                         {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
                       </span>
                     </span>
-                    <span :title="item.score + '分'" class="ng-njl-list-info-title-score">
-                      <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
-                      <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
-                      <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
-                      <span class="color-disabled">{{item.commentCount}}条评价</span>
+                    <span class="ng-f-r">
+                      <xScoreStar v-model="item.score">
+                        <span class="color-disabled" slot="mySlot">{{item.commentCount}}条评价</span>
+                      </xScoreStar>
                     </span>
                   </p>
                   <div class="clr"></div>
@@ -93,11 +91,10 @@
                         {{locationItem}}<span v-if="index < item.location.length - 1">·</span>
                       </span>
                     </span>
-                    <span :title="item.score + '分'" class="ng-njl-list-info-title-score">
-                      <Icon type="ios-star" v-for="fullStar in parseInt(item.score)" :key="'fullStar' + fullStar"></Icon>
-                      <Icon v-if="(item.score - (parseInt(item.score))) > 0" type="ios-star-half"></Icon>
-                      <Icon v-for="blankStar in (5 - Math.ceil(item.score))" :key="'blankStar' + blankStar" type="ios-star-outline"></Icon>
-                      <span class="color-disabled">{{item.commentCount}}条评价</span>
+                    <span class="ng-f-r">
+                      <xScoreStar v-model="item.score">
+                        <span class="color-disabled" slot="mySlot">{{item.commentCount}}条评价</span>
+                      </xScoreStar>
                     </span>
                   </p>
                   <div class="clr"></div>
@@ -119,6 +116,7 @@
 </template>
 
 <script>
+import xScoreStar from '../../scoreStar'
 export default {
   name: 'HelloWorld',
   data () {
@@ -226,7 +224,8 @@ export default {
         }
       ]
     }
-  }
+  },
+  components: {xScoreStar}
 }
 </script>
 
@@ -270,20 +269,12 @@ ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-t
   font-weight: 200;
   font-size: 12px;
 }
-ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title .ng-njl-list-info-title-score{
-  float: right;
-}
 ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-title > span{
   float: right;
 }
 ul.ng-ul-list > li .ng-njl-list-info .ng-njl-list-info-desc{
   color:#666;
   height: 60px;
-}
-i.ivu-icon-ios-star,
-i.ivu-icon-ios-star-half,
-i.ivu-icon-ios-star-outline{
-  color: rgb(231, 199, 13);
 }
 ul.ng-ul-list > li .ng-njl-list-info-tag i{
   width: 15px;

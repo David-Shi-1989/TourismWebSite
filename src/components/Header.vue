@@ -41,11 +41,11 @@
         <Icon type="chevron-left" class="btn-left" @click="imgWrapMove(-1)"></Icon>
         <Icon type="chevron-right" class="btn-right" @click="imgWrapMove(1)"></Icon>
       </div>
-      <div class="img-desc">
+      <!-- <div class="img-desc">
         <h2>宁国农家乐</h2>
         <h3>小标题</h3>
         <p>安徽皖南宣城市宁国</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
