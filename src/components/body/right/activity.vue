@@ -25,7 +25,7 @@
             <td><span class="activity-highlight">{{getCutdownTime}}</span></td>
           </tr>
         </table>
-        <div style="text-align:center;margin-top:20px;">
+        <div style="text-align:center;margin:10px 0 5px 0;">
           <Button size="small" style="margin-right:30px;">了解详情</Button>
           <Button type="primary" size="small">我要报名</Button>
         </div>
