@@ -4,6 +4,7 @@
     <TcList></TcList>
     <ArticleList></ArticleList>
     <NjlList></NjlList>
+    <xBus></xBus>
   </div>
 </template>
 
@@ -11,13 +12,14 @@
 import NjlList from './left/njl-list' // 农家乐列表
 import TcList from './left/tc-list' // 套餐列表
 import ArticleList from './left/article-list' // 攻略列表
+import xBus from './left/bus' // 攻略列表
 export default {
   data () {
     return {
       data: []
     }
   },
-  components: {ArticleList, TcList, NjlList}
+  components: {ArticleList, TcList, NjlList, xBus}
 }
 </script>
 
