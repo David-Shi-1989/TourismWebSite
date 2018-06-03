@@ -4,6 +4,7 @@
   "description": "A Vue.js project",
   "author": "David-Shi-1989 <David-Shi-1989@users.noreply.github.com>",
   "private": true,
+  "homepage": "https://david-shi-1989.github.io/TourismWebSite/",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
