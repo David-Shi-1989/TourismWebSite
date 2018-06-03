@@ -31,10 +31,10 @@
     </div>
     <div id="ng_imgbg">
       <div class="img-wrap">
-        <img src="/static/image/veer-145548331.jpg">
-        <img src="/static/image/veer-141031161.jpg">
-        <img src="/static/image/veer-145848499.jpg">
-        <img src="/static/image/veer-169394215.jpg">
+        <img src="static/image/veer-145548331.jpg">
+        <img src="static/image/veer-141031161.jpg">
+        <img src="static/image/veer-145848499.jpg">
+        <img src="static/image/veer-169394215.jpg">
         <div class="clr"></div>
       </div>
       <div class="img-btn">

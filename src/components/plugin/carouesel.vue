@@ -3,10 +3,10 @@
   <div class="ng-plugin-carouesel">
     <div class="wrapper">
       <div>
-        <img src="/static/image/veer-141031161.jpg">
-        <img src="/static/image/veer-145548331.jpg">
-        <img src="/static/image/veer-145848499.jpg">
-        <img src="/static/image/veer-169394215.jpg">
+        <img src="static/image/veer-141031161.jpg">
+        <img src="static/image/veer-145548331.jpg">
+        <img src="static/image/veer-145848499.jpg">
+        <img src="static/image/veer-169394215.jpg">
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@
     </p>
     <ul class="ng-ul-list-none comment-list-wrap">
       <li class="clear">
-        <Avatar src="/static/image/avatar/3.jpg" size="small" class="ng-f-l"></Avatar>
+        <Avatar src="static/image/avatar/3.jpg" size="small" class="ng-f-l"></Avatar>
         <div class="ng-comment-content-wrap clear">
           <div class="ng-f-r">
             <p>大半年过去了，终于想要写一写 日本 的游记了，其实游记我已经记不得了，那就说哪是哪吧，说一说行程中有趣的事情。 功略放在最后 游记视频 人生的意义对于我来说，永远是爱。</p>
@@ -16,7 +16,7 @@
         <p class="text-align-r ng-comment-content-info">—— <span>春天花会开</span> 评价 <linkSite title="红杉林" to="/ll"></linkSite></p>
       </li>
       <li class="clear">
-        <Avatar src="/static/image/avatar/4.jpg" size="small" class="ng-f-l"></Avatar>
+        <Avatar src="static/image/avatar/4.jpg" size="small" class="ng-f-l"></Avatar>
         <div class="ng-comment-content-wrap clear">
           <div class="ng-f-r">
             <p>身为一个地地道道的 湖南 人，对芒果台放了不下十遍的《还珠格格》倒背如流，因为从小就有了对 大理 的向往。长大以后，对 云南 的了解渐渐增多， 丽江 、 腾冲 、 香格里拉 、 西双版纳 ，都成了我的期待。</p>

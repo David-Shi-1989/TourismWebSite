@@ -7,7 +7,7 @@
     </p>
     <div>
       <div class="activity-imgWrap">
-        <img src="/static/image/huodong/czx.jpg">
+        <img src="static/image/huodong/czx.jpg">
         <div class="activity-img-des">
           <h5>{{data.title}}</h5>
           <p>{{data.subTitle}}</p>

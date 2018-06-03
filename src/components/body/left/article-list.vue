@@ -7,13 +7,13 @@
     </div>
     <ul class="ng-ul-list-none ng-article-wrap">
       <li class="clear">
-        <img class="ng-article-item-img ng-f-l" src="/static/image/article/njpl1.jpg">
+        <img class="ng-article-item-img ng-f-l" src="static/image/article/njpl1.jpg">
         <div class="ng-article-item-info-wrap">
           <router-link to="/article/2" class="ng-article-title">宁国南极漂流</router-link>
           <p class="ng-article-info-wrap">
             <span class="ng-article-location"><i class="fa fa-map-marker"></i><span>宁国·南极乡</span></span>
             <span class="ng-article-user">
-              <Avatar src="/static/image/avatar/1.jpg" size="small"></Avatar>
+              <Avatar src="static/image/avatar/1.jpg" size="small"></Avatar>
               <span class="ng-article-name">Lucky_小仙女</span>
             </span>
 
@@ -28,13 +28,13 @@
         </div>
       </li>
       <li class="clear">
-        <img class="ng-article-item-img ng-f-l" src="/static/image/tc/mw_1.jpg">
+        <img class="ng-article-item-img ng-f-l" src="static/image/tc/mw_1.jpg">
         <div class="ng-article-item-info-wrap">
           <router-link to="/article/2" class="ng-article-title">恩龙世界木屋村</router-link>
           <p class="ng-article-info-wrap">
             <span class="ng-article-location"><i class="fa fa-map-marker"></i><span>宁国·港口</span></span>
             <span class="ng-article-user">
-              <Avatar src="/static/image/avatar/2.jpg" size="small"></Avatar>
+              <Avatar src="static/image/avatar/2.jpg" size="small"></Avatar>
               <span class="ng-article-name">静默大仙</span>
             </span>
 

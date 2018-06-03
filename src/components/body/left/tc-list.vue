@@ -58,7 +58,7 @@ export default {
       data: [
         {
           id: '002a213',
-          img: ['/static/image/tc/xl_1.jpg', '/static/image/tc/xl_2.jpg'],
+          img: ['static/image/tc/xl_1.jpg', 'static/image/tc/xl_2.jpg'],
           title: '网红红杉林',
           path: ['红杉林', '天池景区', '天天农家乐'],
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
@@ -69,7 +69,7 @@ export default {
         },
         {
           id: '002a21a2',
-          img: ['/static/image/tc/mw_1.jpg', '/static/image/tc/mw_2.jpg', '/static/image/tc/mw_3.jpg', '/static/image/tc/mw_4.jpg'],
+          img: ['static/image/tc/mw_1.jpg', 'static/image/tc/mw_2.jpg', 'static/image/tc/mw_3.jpg', 'static/image/tc/mw_4.jpg'],
           title: '恩龙世界木屋村',
           path: ['恩龙世界木屋村'],
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',
@@ -80,7 +80,7 @@ export default {
         },
         {
           id: '002a213',
-          img: ['/static/image/tc/bq1.jpg', '/static/image/tc/bq2.jpg', '/static/image/tc/bq3.jpg', '/static/image/tc/bq4.jpg'],
+          img: ['static/image/tc/bq1.jpg', 'static/image/tc/bq2.jpg', 'static/image/tc/bq3.jpg', 'static/image/tc/bq4.jpg'],
           title: '板桥原始森林',
           path: ['板桥原始森林', '爱国农家乐'],
           content: '宁国市区集合，包含一天内大巴车费，以及中午农家乐一顿农家饭。',

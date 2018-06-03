@@ -124,7 +124,7 @@ export default {
       data1: [
         {
           name: '大院农家乐',
-          img: '/static/image/njg_1.jpg',
+          img: 'static/image/njg_1.jpg',
           score: 4,
           desc: '四季采摘，适合全家出游。位于宁国市郊，距离市区仅20分钟车程，方便停车，有住宿和农家饭。',
           commentCount: 65,
@@ -132,7 +132,7 @@ export default {
         },
         {
           name: '乡土农家乐',
-          img: '/static/image/njg_2.jpg',
+          img: 'static/image/njg_2.jpg',
           score: 3.6,
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
@@ -140,7 +140,7 @@ export default {
         },
         {
           name: '田园居农家体验',
-          img: '/static/image/njg_3.jpg',
+          img: 'static/image/njg_3.jpg',
           score: 5,
           desc: '“采菊东篱下,悠然见南山”的体验',
           commentCount: 24,
@@ -148,7 +148,7 @@ export default {
         },
         {
           name: '田园小憩',
-          img: '/static/image/njg_4.jpg',
+          img: 'static/image/njg_4.jpg',
           score: 4.6,
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
@@ -158,7 +158,7 @@ export default {
       data2: [
         {
           name: '草莓之家',
-          img: '/static/image/njg_9.jpg',
+          img: 'static/image/njg_9.jpg',
           score: 4,
           desc: '四季采摘，适合全家出游。位于宁国市郊，距离市区仅20分钟车程，方便停车，有住宿和农家饭。',
           commentCount: 65,
@@ -166,7 +166,7 @@ export default {
         },
         {
           name: '杨桃乐园农家乐',
-          img: '/static/image/njg_10.jpg',
+          img: 'static/image/njg_10.jpg',
           score: 3.6,
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
@@ -174,7 +174,7 @@ export default {
         },
         {
           name: '枇杷洞',
-          img: '/static/image/njg_11.jpg',
+          img: 'static/image/njg_11.jpg',
           score: 5,
           desc: '“采菊东篱下,悠然见南山”的体验',
           commentCount: 24,
@@ -182,7 +182,7 @@ export default {
         },
         {
           name: '樱桃世界',
-          img: '/static/image/njg_12.jpg',
+          img: 'static/image/njg_12.jpg',
           score: 4.6,
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
@@ -192,7 +192,7 @@ export default {
       data3: [
         {
           name: '老王家垂钓农家',
-          img: '/static/image/njg_14.jpg',
+          img: 'static/image/njg_14.jpg',
           score: 4,
           desc: '四季采摘，适合全家出游。位于宁国市郊，距离市区仅20分钟车程，方便停车，有住宿和农家饭。',
           commentCount: 65,
@@ -200,7 +200,7 @@ export default {
         },
         {
           name: '大军农家',
-          img: '/static/image/njg_15.jpg',
+          img: 'static/image/njg_15.jpg',
           score: 3.6,
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
@@ -208,7 +208,7 @@ export default {
         },
         {
           name: '阿勇龙虾垂钓',
-          img: '/static/image/njg_16.jpg',
+          img: 'static/image/njg_16.jpg',
           score: 5,
           desc: '“采菊东篱下,悠然见南山”的体验',
           commentCount: 24,
@@ -216,7 +216,7 @@ export default {
         },
         {
           name: '闲逸农家乐园',
-          img: '/static/image/njg_17.jpg',
+          img: 'static/image/njg_17.jpg',
           score: 4.6,
           desc: '农家灶台饭，体验最简单的生活。',
           commentCount: 24,
