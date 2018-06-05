@@ -55,7 +55,16 @@ export default {
           busType: '中型高一座席(安凯)',
           busId: 'nj232',
           price: 130
-        },{
+        },
+        {
+          startTime: '10:20',
+          startStation: '宣城汽车站',
+          desination: '宁国客运站',
+          busType: '中型高一座席(安凯)',
+          busId: '89sdh',
+          price: 30
+        },
+        {
           startTime: '10:20',
           startStation: '宣城汽车站',
           desination: '宁国客运站',
