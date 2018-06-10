@@ -5,6 +5,7 @@
       <router-view></router-view>
     </div>
     <xFoot></xFoot>
+    <div style="position:fixed;top:30rem;left:0;"><QQService></QQService></div>
   </div>
 </template>
 
@@ -12,9 +13,10 @@
 import xHeader from '@/components/Header'
 import xSideBar from '@/components/SideBar'
 import xFoot from '@/components/footer/foot'
+import QQService from '@/components/body/qq-service'
 export default {
   name: 'App',
-  components: {xHeader, xSideBar, xFoot}
+  components: {xHeader, xSideBar, xFoot, QQService}
 }
 </script>
 
