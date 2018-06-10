@@ -11,12 +11,13 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       columns1: [
         {
           title: '出发时间',
-          key: 'startTime'
+          key: 'startTime',
+          sortable: true
         },
         {
           title: '出发车站',
@@ -73,9 +74,9 @@ export default {
           price: 30
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped>
