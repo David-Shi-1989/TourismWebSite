@@ -37,11 +37,11 @@ export default {
   font-size: 1rem;
   color:#f3f3f3;
   margin-right: .4rem;
-  transition: all .5s;
+  transition: all .8s;
 }
 .service-wrap >>> span{
   color:#eee;
   font-size: .7rem;
-  transition: all .5s;
+  transition: all .8s;
 }
 </style>
