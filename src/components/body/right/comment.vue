@@ -17,8 +17,7 @@
           <p class="text-align-r ng-comment-content-info">—— <span>{{item.username}}</span> 评价 <linkSite :title="item.placename" to="/ll"></linkSite></p>
         </li>
       </ul>
-    </div>
-    
+    </div>    
   </div>
 </template>
 
